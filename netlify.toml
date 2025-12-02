@@ -1,0 +1,7 @@
+[build]
+  command = "npm run build"
+  publish = "."
+
+[context]
+  # Netlify will deploy the repository root as a static site.
+  # `npm run build` compiles TypeScript sources (congostream/script.ts -> congostream/script.js)

@@ -8,5 +8,6 @@
     "strict": true,
     "skipLibCheck": true
   },
-  "include": ["congostream/script.ts"]
+  "include": ["congostream/**/*.ts"],
+  "exclude": ["node_modules"]
 }
