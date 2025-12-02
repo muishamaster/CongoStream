@@ -5,7 +5,7 @@
 ✅ **Complété :**
 - Structure HTML de 8 pages
 - JavaScript centralisé (`js/main.js`)
-- Mini-app musicale (`congostream/`) avec TypeScript compilé
+- Mini-app musicale (`spofix/`) avec TypeScript compilé
 - Styles CSS (thème sombre)
 - Mock API pour développement
 - Commentaires et documentation
@@ -25,12 +25,6 @@ git config user.email "votre.email@example.com"
 ### 2️⃣ Premier commit : Structure de base
 
 ```bash
-git add .
-git commit -m "feat: initialiser CongoStream - structure HTML + CSS + JS centralisé
-
-- 8 pages HTML (accueil, compte, films, musique, podcasts, etc.)
-- Système JS centralisé dans js/main.js
-- Styles globaux thème sombre (cyan/noir)
 - Mini-app musicale CongoStream (playlist, citations, thème)
 - Mock API pour développement local
 - Configuration TypeScript
@@ -42,11 +36,6 @@ git commit -m "feat: initialiser CongoStream - structure HTML + CSS + JS central
 #### A. Architecture et cleanup
 
 ```bash
-git add js/main.js congostream/script.ts congostream/script.js
-git commit -m "refactor: centraliser logique JavaScript et nettoyer scripts inline
-
-- Extraction de init_accueil() et init_compte() dans js/main.js
-- Initialisation automatique par page (détection URL)
 - Suppression des scripts inline des pages HTML
 - Compilation TypeScript congostream/script.ts → script.js (ES5)
 - Amélioration gestion erreurs avec try/catch
@@ -56,10 +45,6 @@ git commit -m "refactor: centraliser logique JavaScript et nettoyer scripts inli
 #### B. API et fallback
 
 ```bash
-git add mock-api/ js/main.js compte.html
-git commit -m "feat: ajouter mock API avec fallback automatique
-
-- Créer mock-api/mon-compte-1.json pour tests locaux
 - Implémenter fallback init_compte() : API réelle → mock local
 - Permettre développement sans serveur backend actif
 - Améliorer gestion erreurs réseau
@@ -69,10 +54,6 @@ git commit -m "feat: ajouter mock API avec fallback automatique
 #### C. Documentation
 
 ```bash
-git add README.md COMMIT_PLAN.md .gitignore
-git commit -m "docs: ajouter documentation complète
-
-- README.md : structure, démarrage, architecture, tests
 - COMMIT_PLAN.md : workflow et améliorations futures
 - .gitignore : exclusions pour Git
 - Commentaires d'en-tête dans tous les fichiers
@@ -82,10 +63,6 @@ git commit -m "docs: ajouter documentation complète
 #### D. Corrections et améliorations
 
 ```bash
-git add congostream/script.ts congostream/script.js
-git commit -m "fix: corriger duplication et renommer fonction init_index
-
-- Renommer initCongoStream → init_index pour cohérence
 - Supprimer console.log et fetch dupliqués
 - Améliorer structure et lisibilité du code
 - Ajouter JSDoc complets
@@ -102,7 +79,7 @@ python -m http.server 8000
 
 # 2. Tester toutes les pages
 curl http://localhost:8000/accueil.html
-curl http://localhost:8000/congostream/
+curl http://localhost:8000/spofix/
 
 # 3. Vérifier console navigateur (F12)
 # - Pas d'erreurs 404
@@ -142,7 +119,7 @@ netlify deploy --prod --dir=.
 ```bash
 # 1. Configurer domaine personnalisé
 #    Netlify → Site settings → Domain management
-#    Ex: congostream.netlify.app ou congostream.cd (ICANN)
+#    Ex: spofix.netlify.app ou spofix.cd (ICANN)
 
 # 2. Ajouter redirects (si nécessaire)
 #    Créer netlify.toml :

@@ -1,17 +1,3 @@
-/* Bridge loader: preserve old path /congostream/script.js
-   This file dynamically loads the real script from /spofix/script.js
-   No application code is modified; this is a compatibility shim. */
-(function () {
-  try {
-    var s = document.createElement('script');
-    s.src = '../spofix/script.js';
-    s.defer = false;
-    document.head.appendChild(s);
-  }
-  catch (e) {
-    console.error('Failed to load spofix/script.js shim', e);
-  }
-})();
 "use strict";
 /**
  * Initializes the congostream mini-app

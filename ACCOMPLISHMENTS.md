@@ -6,17 +6,17 @@
 - ✅ **8 pages HTML** modulaires (accueil, compte, films, musique, podcasts, exploration, login, detail podcast)
 - ✅ **Architecture JavaScript centralisée** dans `js/main.js`
 - ✅ **Initialisation automatique** par page détectée via URL
-- ✅ **Dossier `congostream/`** — mini-app musicale autonome
+- ✅ **Dossier `spofix/`** — mini-app musicale autonome
 
-### Code & Compilation
-- ✅ **TypeScript source** (`congostream/script.ts`) pour maintenabilité
-- ✅ **Compilation ES5** (`congostream/script.js`) pour compatibilité navigateurs
+-### Code & Compilation
+- ✅ **TypeScript source** (`spofix/script.ts`) pour maintenabilité
+- ✅ **Compilation ES5** (`spofix/script.js`) pour compatibilité navigateurs
 - ✅ **Extraction de scripts inline** → Fonctions réutilisables (`init_*`)
 - ✅ **Gestion erreurs** — try/catch et fallback automatique
 
 ### Styles & UX
 - ✅ **Thème global cohérent** — Sombre (cyan #00ffcc, fond #0d0d0d)
-- ✅ **Styles locaux** — `congostream/style.css` pour la mini-app
+- ✅ **Styles locaux** — `spofix/style.css` pour la mini-app
 - ✅ **Responsive (base)** — Viewport meta tags configurés
 - ✅ **Navigation fluide** — Menus cohérents sur toutes les pages
 
@@ -187,13 +187,13 @@ pip install flask flask-cors python-dotenv
 python -m http.server 8000
 
 # TypeScript auto-compilation
-tsc --watch congostream/script.ts --outDir congostream
+tsc --watch spofix/script.ts --outDir spofix
 
 # Format code
 npx prettier --write "**/*.{html,css,js,ts}"
 
 # Lint
-npx eslint js/main.js congostream/script.js
+npx eslint js/main.js spofix/script.js
 ```
 
 ### Tests & Audit

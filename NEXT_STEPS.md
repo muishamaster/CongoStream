@@ -12,7 +12,7 @@
 2. **Serveur local en cours d'exécution**
    ```bash
    http://localhost:8000/accueil.html
-   http://localhost:8000/congostream/
+   http://localhost:8000/spofix/
    ```
 
 3. **Documentation complète**
@@ -23,7 +23,7 @@
 
 4. **Code propre & testé**
    - JavaScript centralisé (`js/main.js`)
-   - TypeScript compilé (`congostream/script.js`)
+   - TypeScript compilé (`spofix/script.js`)
    - Mock API fonctionnelle
    - Pas d'erreurs critiques
 
@@ -146,7 +146,7 @@ git diff
 ### TypeScript ne compile pas
 ```bash
 # Compiler manuellement
-tsc congostream/script.ts --outDir congostream --skipLibCheck
+tsc spofix/script.ts --outDir spofix --skipLibCheck
 
 # Ou utiliser le JS existant (script.js est déjà bon)
 ```

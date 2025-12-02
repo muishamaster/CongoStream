@@ -21,7 +21,7 @@ cd C:\spofix
 2. **Glisser-déposer** le dossier `C:\spofix` entier
 3. Netlify génère une URL temporaire en **2 secondes** ✅
 
-**URL générée :** `https://xxx-congostream.netlify.app`
+**URL générée :** `https://xxx-spofix.netlify.app`
 
 ### Avantages ✅
 - ⚡ Super rapide (30 sec)
@@ -97,7 +97,7 @@ Environment:       (laisser vide)
 ```
 Settings → Domain management
 Cliquer "Add custom domain"
-Entrer : congostream.netlify.app
+Entrer : spofix.netlify.app
 ```
 
 #### Option B : Domaine propre (.cd, .com, etc.)
@@ -111,8 +111,8 @@ Entrer : mon-domaine.cd
 ```
 
 ### URL résultante
-- Netlify : `https://congostream.netlify.app`
-- Personnalisé : `https://congostream.cd`
+-- Netlify : `https://spofix.netlify.app`
+-- Personnalisé : `https://spofix.cd`
 
 ---
 
@@ -208,7 +208,7 @@ C:\spofix\
 ├── accueil.html
 ├── js/
 │   └── main.js
-├── congostream/
+├── spofix/
 │   └── script.js
 └── style.css
 ```
@@ -222,7 +222,7 @@ C:\spofix\
 ```markdown
 # CongoStream 🇨🇩
 
-**Live :** https://congostream.netlify.app
+**Live :** https://spofix.netlify.app
 
 [Rest du README...]
 ```

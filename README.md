@@ -19,7 +19,7 @@ spofix/
 ├── js/
 │   └── main.js                   # JavaScript centralisé (utilitaires + init par page)
 │
-├── congostream/
+├── spofix/
 │   ├── index.html                # Mini-app musicale
 │   ├── script.ts                 # Source TypeScript de la mini-app
 │   ├── script.js                 # JavaScript compilé (ES5 compatible)
@@ -51,7 +51,7 @@ Puis ouvrir `http://localhost:8000` dans le navigateur.
 - **Accueil** : `http://localhost:8000/accueil.html`
 - **Compte** : `http://localhost:8000/compte.html` (mock API)
 - **Exploration** : `http://localhost:8000/exploration.html`
-- **Mini-app CongoStream** : `http://localhost:8000/congostream/`
+- **Mini-app CongoStream** : `http://localhost:8000/spofix/`
 
 ## 🛠️ Architecture JavaScript
 
@@ -131,11 +131,11 @@ console.log(window.init_index);
 ### TypeScript → JavaScript
 
 ```bash
-# Compiler congostream/script.ts
-tsc congostream/script.ts --target es2020 --lib es2020,dom
+# Compiler spofix/script.ts
+tsc spofix/script.ts --target es2020 --lib es2020,dom
 ```
 
-Le résultat est en `congostream/script.js` (ES5 compatible).
+Le résultat est en `spofix/script.js` (ES5 compatible).
 
 ## 📝 Commits recommandés
 

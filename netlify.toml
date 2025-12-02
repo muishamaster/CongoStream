@@ -4,4 +4,4 @@
 
 [context]
   # Netlify will deploy the repository root as a static site.
-  # `npm run build` compiles TypeScript sources (congostream/script.ts -> congostream/script.js)
+  # `npm run build` compiles TypeScript sources (spofix/script.ts -> spofix/script.js)

@@ -32,7 +32,7 @@ Thumbs.db
 logs/
 
 # Compiled JS (optionnel si on versione les .js compilés)
-# congostream/script.js
+# spofix/script.js
 
 # Dossiers temporaires
 tmp/
