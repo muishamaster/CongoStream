@@ -1,0 +1,80 @@
+# Git ignore rules for CongoStream project
+
+# Node/npm
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# TypeScript
+*.tsbuildinfo
+dist/
+build/
+
+# IDE/Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+logs/
+
+# Compiled JS (optionnel si on versione les .js compilés)
+# congostream/script.js
+
+# Dossiers temporaires
+tmp/
+temp/
+.cache/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Tests
+coverage/
+.nyc_output/
+test-results/
+
+# Dossiers de déploiement
+.netlify/
+.vercel/
+dist/
+
+# Autres
+*.bak
+*.tmp
+.vscode-test-server-storage/

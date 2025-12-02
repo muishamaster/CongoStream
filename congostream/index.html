@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+  congostream/index.html - Mini-app musicale
+  - Contient la logique de playlist, citations et thème.
+  - Le code d'initialisation est exposé via `congostream/script.js` (fonction `init_index`).
+  - Le fichier commun `js/main.js` appelle `init_index()` automatiquement.
+-->
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CongoStream - Rituel Musical</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>CongoStream 🎵</h1>
+
+    <div class="theme-toggle">
+      <button id="toggleTheme">Changer de thème</button>
+    </div>
+
+    <div class="playlist">
+      <h2>🎧 Playlist</h2>
+      <ul id="playlist"></ul>
+      <input type="text" id="songInput" placeholder="Ajouter une chanson..." />
+      <button id="addSong">Ajouter</button>
+    </div>
+
+    <div class="quote">
+      <h2>💬 Sagesse Congolaise</h2>
+      <p id="quoteText">Clique pour une citation</p>
+      <button id="newQuote">Nouvelle citation</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--
+  Mon Compte - CongoStream
+  Contient la vue du profil utilisateur. Le chargement des données se fait
+  via `init_compte()` défini dans `js/main.js`. En développement, un mock
+  `mock-api/mon-compte-1.json` est disponible.
+-->
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mon Compte – CongoStream</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">🇨🇩 CongoStream</div>
+    <nav>
+      <ul>
+        <li><a href="accueil.html">Accueil</a></li>
+        <li><a href="films.html">Films</a></li>
+        <li><a href="musique.html">Musique</a></li>
+        <li><a href="podcasts.html">Podcasts</a></li>
+        <li><a href="compte.html">Mon Compte</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="content">
+    <h2>👤 Mon Compte</h2>
+
+    <div class="profil">
+      <p><strong>Nom d'utilisateur :</strong> MbokaFan</p>
+      <p><strong>Abonnement :</strong> <span id="abonnement-utilisateur">Chargement...</span></p>
+      <button>Modifier mon profil</button>
+    </div>
+
+    <h3>🎵 Artistes suivis</h3>
+    <div class="grid">
+      <div class="card"><img src="fally.jpg"><p>Fally Ipupa</p></div>
+      <div class="card"><img src="innossb.jpg"><p>Innoss'B</p></div>
+    </div>
+
+    <h3>🎬 Films vus récemment</h3>
+    <div class="grid">
+      <div class="card"><img src="film1.jpg"><p>Kinshasa by Night</p></div>
+      <div class="card"><img src="film2.jpg"><p>Mboka Hustle</p></div>
+    </div>
+
+    <h3>🎙️ Podcasts écoutés</h3>
+    <div class="grid">
+      <div class="card"><img src="podcast1.jpg"><p>Voix de Kin</p></div>
+      <div class="card"><img src="podcast2.jpg"><p>Paroles d’Mboka</p></div>
+    </div>
+
+    <h3>📌 Suggestions pour toi</h3>
+    <div class="grid">
+      <div class="card"><img src="suggestion.jpg"><p>Découvre “RDC Rythmes”</p></div>
+    </div>
+
+    <h3>🏆 Badges débloqués</h3>
+    <div class="badges">
+      <span class="badge">🎖️ Mboka Explorer</span>
+      <span class="badge">🎖️ Fan de Fally</span>
+    </div>
+
+    <h3>🛠️ Paramètres</h3>
+    <ul>
+      <li><a href="#">Changer mot de passe</a></li>
+      <li><a href="#">Gérer mes abonnements</a></li>
+      <li><a href="#">Déconnexion</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 CongoStream</p>
+  </footer>
+    <script src="js/main.js" defer></script>
+</body>
+</html>
