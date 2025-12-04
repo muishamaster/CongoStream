@@ -23,36 +23,57 @@ async function initDb() {
     // Postgres
     const { Client } = require('pg');
     const client = new Client({ connectionString: process.env.DATABASE_URL });
-    await client.connect();
-    db = client;
-    dbType = 'pg';
+    try {
+      await client.connect();
+      db = client;
+      dbType = 'pg';
+    } catch (err) {
+      console.error('⚠️ Postgres connection failed:', err.message);
+      console.log('Falling back to SQLite...');
+      initSqlite();
+      return;
+    }
     // Ensure tables exist
-    await client.query(`
-      CREATE TABLE IF NOT EXISTS users (
-        id SERIAL PRIMARY KEY,
-        username TEXT UNIQUE,
-        password TEXT,
-        created_at TIMESTAMP DEFAULT now()
-      );
-    `);
-    await client.query(`
-      CREATE TABLE IF NOT EXISTS films (
-        id SERIAL PRIMARY KEY,
-        title TEXT,
-        poster TEXT
-      );
-    `);
-    await client.query(`
-      CREATE TABLE IF NOT EXISTS musiques (
-        id SERIAL PRIMARY KEY,
-        title TEXT,
-        artist TEXT,
-        cover TEXT
-      );
-    `);
+    try {
+      await db.query(`
+        CREATE TABLE IF NOT EXISTS users (
+          id SERIAL PRIMARY KEY,
+          username TEXT UNIQUE,
+          password TEXT,
+          created_at TIMESTAMP DEFAULT now()
+        );
+      `);
+      await db.query(`
+        CREATE TABLE IF NOT EXISTS films (
+          id SERIAL PRIMARY KEY,
+          title TEXT,
+          poster TEXT
+        );
+      `);
+      await db.query(`
+        CREATE TABLE IF NOT EXISTS musiques (
+          id SERIAL PRIMARY KEY,
+          title TEXT,
+          artist TEXT,
+          cover TEXT
+        );
+      `);
+    } catch (err) {
+      console.error('Error creating Postgres tables:', err.message);
+    }
   } else {
-    // SQLite fallback
+    initSqlite();
+  }
+}
+
+function initSqlite() {
+  try {
     const sqlite3 = require('sqlite3');
+    if (!sqlite3) {
+      console.error('SQLite3 not available, running in demo mode');
+      dbType = 'demo';
+      return;
+    }
     const dbFile = path.join(__dirname, 'data', 'dev.sqlite');
     // ensure data dir
     const dataDir = path.dirname(dbFile);
@@ -66,6 +87,10 @@ async function initDb() {
       sqlite.run(`CREATE TABLE IF NOT EXISTS films (id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, poster TEXT)`);
       sqlite.run(`CREATE TABLE IF NOT EXISTS musiques (id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, artist TEXT, cover TEXT)`);
     });
+  } catch (err) {
+    console.error('⚠️ SQLite initialization failed:', err.message);
+    console.log('Running in demo mode (using in-memory storage)');
+    dbType = 'demo';
   }
 }
 
@@ -190,12 +215,16 @@ app.post('/auth/login', async (req, res) => {
   } catch (e) { res.status(500).json({ error: e.message }); }
 });
 
+app.get('/health', (req, res) => {
+  res.json({ status: 'ok', db: dbType, port: PORT });
+});
+
 // Start
 (async () => {
   try {
     await initDb();
     await seedData();
-    app.listen(PORT, () => console.log(`Server listening on port ${PORT} (db=${dbType})`));
+    app.listen(PORT, () => console.log(`\n🚀 Server listening on port ${PORT} (db=${dbType})\n`));
   } catch (e) {
     console.error('Failed to start server', e);
     process.exit(1);
