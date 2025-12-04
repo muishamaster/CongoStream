@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: congostream-api
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: DATABASE_URL
+        scope: all
+        value: ${db.connectionString}
+      - key: JWT_SECRET
+        scope: all
+        sync: false
+      - key: PORT
+        scope: all
+        value: 10000
+
+databases:
+  - name: congostream-db
+    databaseName: congostream
+    user: congostream
+    plan: free
