@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--
+  Accueil - CongoStream
+  Ce fichier affiche la page d'accueil. Les scripts spécifiques à la page
+  sont centralisés dans `assets/js/main.js` et initialisés via `init_accueil()`.
+-->
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CongoStream</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/spofix/script.js" defer></script> 
+</head>
+<body>
+  <audio autoplay loop>
+  <source src="../assets/data/ambiance-congo.mp3" type="audio/mpeg">
+</audio>
+  <p id="message-accueil" class="accueil-message"></p>
+  <header>
+    <div>
+  <!-- Contenu initial du div -->
+
+  <!-- Barre de recherche ajoutée juste après l'ouverture du div -->
+  <form action="/search" method="GET" style="margin-top: 10px;">
+    <input type="text" name="query" placeholder="Rechercher..." style="padding: 8px; width: 200px;">
+    <button type="submit" style="padding: 8px;">🔍</button>
+  </form>
+</div>
+    <div class="logo">🇨🇩 CongoStream</div>
+    <nav>
+      <ul>
+        <li><a href="accueil.html">Accueil</a></li>
+        <li><a href="films.html">Films</a></li>
+        <li><a href="musique.html">Musique</a></li>
+        <li><a href="podcasts.html">Podcasts</a></li>
+        <li><a href="compte.html">Mon Compte</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Plonge dans la culture congolaise</h1>
+    <p>Films, séries, musiques et podcasts 100% RDC</p>
+    <a href="exploration.html" class="btn">Explorer</a>
+  </section>
+
+  <section class="content">
+    <h2>🎥 Films populaires</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="../assets/data/film1.jpg" alt="Film 1">
+        <p>Kinshasa by Night</p>
+      </div>
+      <div class="card">
+        <img src="../assets/data/film2.jpg" alt="Film 2">
+        <p>Mboka Hustle</p>
+      </div>
+    </div>
+
+    <h2>🎵 Musique tendance</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="../assets/data/music1.jpg" alt="Musique 1">
+        <p>Fally Ipupa – Formidable</p>
+      </div>
+      <div class="card">
+        <img src="../assets/data/music2.jpg" alt="Musique 2">
+        <p>Innoss'B – Mortel-06</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 CongoStream – Tous droits réservés</p>
+  </footer>
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

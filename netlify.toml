@@ -1,7 +1,7 @@
 [build]
   command = "npm run build"
-  publish = "."
+  publish = "public"
 
 [context]
-  # Netlify will deploy the repository root as a static site.
-  # `npm run build` compiles TypeScript sources (spofix/script.ts -> spofix/script.js)
+  # Netlify will deploy the public directory as a static site.
+  # `npm run build` compiles TypeScript sources (src/spofix/script.ts -> public/assets/js/spofix/script.js)
