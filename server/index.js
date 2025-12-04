@@ -7,12 +7,28 @@ const jwt = require('jsonwebtoken');
 const fs = require('fs');
 const path = require('path');
 
-const PORT = process.env.PORT || 4000;
-const JWT_SECRET = process.env.JWT_SECRET || 'change-this-secret';
+const PORT = process.env.PORT || 10000;
+const JWT_SECRET = process.env.JWT_SECRET || 'change-this-secret-replace-in-production';
 
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
+
+// Root endpoint
+app.get('/', (req, res) => {
+  res.json({ 
+    message: 'CongoStream API', 
+    version: '1.0.0',
+    status: 'running',
+    endpoints: {
+      health: '/health',
+      films: '/api/films',
+      musiques: '/api/musiques',
+      register: 'POST /auth/register',
+      login: 'POST /auth/login'
+    }
+  });
+});
 
 // Simple DB abstraction: prefer Postgres (DATABASE_URL) else use SQLite file
 let db = null;
